@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/snackbar.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/snackbar.js"></script>
 </head>
 <body>
     <div class="container">
@@ -31,5 +35,16 @@
         <div class="row"><!-- Miejsce na reklamy --></div>
     </div>
     <footer>Wykonał: Kamil Langer &copy; kamillanger4@gmail.com</footer>
+    <div id="snackbar"><span id="tekst"></span></div>
+    <?php
+    if(isset($_SESSION['bladEL'])){
+        ?><script>openSnackbarBLH();</script><?php
+    } else if(isset($_SESSION['bladL'])){
+        ?><script>openSnackbarBL();</script><?php
+    } else if(isset($_SESSION['bladE'])){
+        ?><script>openSnackbarBE();</script><?php
+    }
+    unset($_SESSION['bladEL']);
+    ?>
 </body>
 </html>

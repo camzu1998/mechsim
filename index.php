@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,9 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/snackbar.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/snackbar.css">
 </head>
 <body>
     <div class="container">
@@ -38,5 +42,15 @@
         <div class="row"><!-- Miejsce na reklamy --></div>
     </div>
     <footer>Wykonał: Kamil Langer &copy; kamillanger4@gmail.com</footer>
+    <div id="snackbar"><span id="tekst"></span></div>
+    <?php
+    if(isset($_SESSION['bladLH'])){
+        ?><script>openSnackbarBLH();</script><?php
+    } else if(isset($_SESSION['RegOK'])){
+        ?><script>openSnackbarOK();</script><?php
+    }
+    unset($_SESSION['bladLH']);
+    unset($_SESSION['RegOK']);
+    ?>
 </body>
 </html>
