@@ -25,9 +25,9 @@
             <div class="six columns">
                 <form action="zaloguj.php" method="post">
                     <p>Login:</p>
-                    <input type="text" name="login">
+                    <input type="text" name="login" required>
                     <p>Hasło:</p>
-                    <input type="password" name="haslo"><br>
+                    <input type="password" name="haslo" required><br>
                     <input type="submit" name="Zaloguj" value="Zaloguj!">
                 </form>
                 <a href="rejestracja.php">Zarejestruj się!</a>

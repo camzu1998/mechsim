@@ -24,11 +24,11 @@
         <div class="row" style="margin-top: 15%;">
             <form action="rejestruj.php" method="post" style="text-align:center;">
                 <p>Login:</p>
-                <input type="text" name="login">
+                <input type="text" name="login" required>
                 <p>Hasło:</p>
-                <input type="password" name="haslo">
+                <input type="password" name="haslo" required>
                 <p>Email:</p>
-                <input type="email" name="email"> <br>
+                <input type="email" name="email" required> <br>
                 <input type="submit" name="rejestruj" value="Rejestruj!">
             </form>
         </div>
